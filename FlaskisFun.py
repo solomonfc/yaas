@@ -1,8 +1,11 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://yaas:naima88712@192.168.1.160/yaas'
+db = SQLAlchemy(app)
 
 @app.route('/', defaults={'name':"Guest"})
 @app.route('/<string:name>' , methods=['GET'])
