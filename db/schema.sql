@@ -1,7 +1,9 @@
 drop table if exists gl_book cascade;
 create table gl_book(
-	book_id					varchar(10),
-	book_name				varchar(40)
+	id 			varchar(32) NOT NULL,
+	name		varchar(240),
+	note		varchar(600),
+	PRIMARY KEY  (id)
 );
 
 
